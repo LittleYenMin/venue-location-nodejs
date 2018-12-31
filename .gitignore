@@ -87,3 +87,6 @@ typings/
 .Trashes
 Thumbs.db
 ehthumbs.db
+
+# Production Data
+.csv
