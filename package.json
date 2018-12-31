@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/LittleYenMin/venue-location-nodejs#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "papaparse": "^4.6.2"
   },
   "devDependencies": {
     "eslint": "^5.11.1",
