@@ -5,5 +5,7 @@ vendor:
 style-check:	vendor
 	./node_modules/.bin/eslint *.js
 
-run:	style-check
+unit-test:	style-check
+	./node_modules/.bin/mocha
+run:	unit-test
 	node index.js
