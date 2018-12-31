@@ -2,7 +2,7 @@ const fs = require('fs')
 const Papa = require('papaparse')
 
 /**
- * set header true to get value with field: value
+ * set header true to get value with field:
  */
 function getCsvDatas () {
   return new Promise((resolve, reject) => {
@@ -19,6 +19,9 @@ function getCsvDatas () {
   })
 }
 
-module.exports = {
-  getCsvDatas: getCsvDatas
+exports.getLocationByCountry = async function (country) {
+  const datas = await getCsvDatas()
+  return datas.filter(function (val, index, array) {
+    return val.country === country
+  })
 }
