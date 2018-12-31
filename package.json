@@ -1,0 +1,25 @@
+{
+  "name": "venue-location-nodejs",
+  "version": "1.0.0",
+  "description": "An nodejs api to get venue location from csv file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LittleYenMin/venue-location-nodejs.git"
+  },
+  "keywords": [
+    "YBEX"
+  ],
+  "author": "YM_Chiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LittleYenMin/venue-location-nodejs/issues"
+  },
+  "homepage": "https://github.com/LittleYenMin/venue-location-nodejs#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
