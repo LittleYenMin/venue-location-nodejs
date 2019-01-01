@@ -1,13 +1,33 @@
 const venue = require('../models/venue.js')
 
-exports.getLocationByCountry = async function (req, res) {
-  const country = req.params.country
-  const result = await venue.getLocationByCountry(country)
+function getResponseDTO (locations) {
+  return {
+    total: locations.length,
+    datas: locations
+  }
+}
 
-  const shortest = await venue.getShortestDistanceByLonLat(100.680045, 10.7926179)
-  console.log(shortest)
-  res.json({
-    total: result.length,
-    datas: result
-  })
+exports.getLocationByCountry = async function (req, res, next) {
+  try {
+    const country = req.params.country
+    const locations = await venue.getLocationByCountry(country)
+    res.json(getResponseDTO(locations))
+  } catch (e) { next(e) }
+}
+
+exports.getLocationByShortestDistance = async function (req, res, next) {
+  try {
+    const latitude = req.params.latitude
+    const longitude = req.params.longitude
+    const locations = await venue.getShortestDistanceByLatAndLong(latitude, longitude)
+    res.json(getResponseDTO(locations))
+  } catch (e) { next(e) }
+}
+
+exports.getById = async function (req, res, next) {
+  try {
+    const referenceId = req.params.id
+    const location = await venue.getById(referenceId)
+    res.json(getResponseDTO([location]))
+  } catch (e) { next(e) }
 }

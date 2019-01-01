@@ -1,4 +1,4 @@
-const fs = require('fs')
+const Fs = require('fs')
 const Papa = require('papaparse')
 
 /**
@@ -6,7 +6,7 @@ const Papa = require('papaparse')
  */
 function getCsvDatas () {
   return new Promise((resolve, reject) => {
-    const file = fs.createReadStream('db.csv')
+    const file = Fs.createReadStream(process.env.CSV_DB_FILE || 'db.csv')
     Papa.parse(file, {
       header: true,
       complete: function (results) {
@@ -36,22 +36,29 @@ exports.getLocationByCountry = async function (country) {
   })
 }
 
-exports.getShortestDistanceByLonLat = async function (latitude, longitude) {
+exports.getShortestDistanceByLatAndLong = async function (latitude, longitude) {
   const datas = await getCsvDatas()
   let shortestDistance = Number.MAX_VALUE
   datas.forEach(element => {
-    let lan = 0
+    let lat = 0
     let lng = 0
     if (element.lng_lat_point !== '' && element.lng_lat_point) {
-      const lanLng = splitLngLatPoint(element.lng_lat_point)
-      lan = lanLng[0]
-      lng = lanLng[1]
+      const latlng = splitLngLatPoint(element.lng_lat_point)
+      lat = latlng[0]
+      lng = latlng[1]
     }
-
-    element.distance = getDistance(lan, latitude, lng, longitude)
+    element.distance = getDistance(lat, latitude, lng, longitude)
     shortestDistance = Math.min(element.distance, shortestDistance)
   })
   return datas.filter(function (val, index, array) {
     return val.distance === shortestDistance
   })
+}
+
+exports.getById = async function (id) {
+  const datas = await getCsvDatas()
+  if (!(typeof datas[id] === 'undefined')) {
+    return datas[id]
+  }
+  throw new Error(`Can't find by id ${id}`)
 }
