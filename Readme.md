@@ -39,8 +39,8 @@ venue-location-nodejs
 
 ## Build to Heroku
 Unfortunately, you can't build this project to heroku or the other PaaS platform.
-Most of time, You are not allow to touch the PaaS platform file system and this project database depend on the local CSV file.
-that's why you can't build on Heroku
+
+Most of the time, You are not allowed to touch the PaaS platform file system, And this project database depends on the local CSV file, that's why you can't build on Heroku.
 
 ## Used frameworks
 - Express
