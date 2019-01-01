@@ -62,3 +62,5 @@ exports.getById = async function (id) {
   }
   throw new Error(`Can't find by id ${id}`)
 }
+
+exports.getCsvDatas = getCsvDatas

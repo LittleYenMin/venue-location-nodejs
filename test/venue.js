@@ -2,6 +2,16 @@ const should = require('should')
 const venue = require('../app/models/venue.js')
 
 describe('#Venue', () => {
+  it('Get all locations from DB file', (done) => {
+    venue.getCsvDatas()
+      .then( (locations) => {
+        try {
+          locations.length.should.equal(391)
+          done()
+        } catch (e) { done(e) }
+      }, done)
+  })
+
   it('Get locations by country `VN`', (done) => {
     venue.getLocationByCountry('VN')
       .then( (locations) => {
