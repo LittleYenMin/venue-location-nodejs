@@ -13,4 +13,4 @@ test:	style-check
 	./node_modules/.bin/nyc ./node_modules/.bin/mocha
 
 run:	test
-	node index.js
+	npm start

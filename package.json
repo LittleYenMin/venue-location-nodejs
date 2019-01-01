@@ -4,7 +4,7 @@
   "description": "An nodejs api to get venue location from csv file",
   "main": "index.js",
   "scripts": {
-    "start": "make run",
+    "start": "node index.js",
     "test": "make test #making UnitTest(Mocha) and style-check (ESLint)"
   },
   "repository": {
