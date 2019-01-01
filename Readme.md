@@ -21,7 +21,7 @@ So, I focus on integrate the something fun and make code simple to understand.
 ## How to run
 simple use `make run`
 
- *If you want to see more, please access the `Makedown` file*
+ *If you want to see more, please access the `Makefile`*
 
 ## How to test
 simple use `make test`
