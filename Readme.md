@@ -37,9 +37,9 @@ venue-location-nodejs
  index.js #the entry point
 ```
 
-## Is possible to build to Heroku
-Unfortunately, No.
-Because this project database depend on the local csv file.
+## Build to Heroku
+Unfortunately, you can't build this project to heroku or the other PaaS platform.
+Most of time, You are not allow to touch the PaaS platform file system and this project database depend on the local CSV file.
 that's why you can't build on Heroku
 
 ## Used frameworks
