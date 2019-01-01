@@ -28,7 +28,7 @@ venue-location-nodejs
 ```
 ## Is possible to build to Heroku
 Unfortunately, No.
-Because this project database depend on local csv file.
+Because this project database depend on the local csv file.
 that's why you can't build on Heroku
 
 ## Used frameworks

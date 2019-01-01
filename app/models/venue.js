@@ -40,15 +40,17 @@ exports.getShortestDistanceByLatAndLong = async function (latitude, longitude) {
   const datas = await getCsvDatas()
   let shortestDistance = Number.MAX_VALUE
   datas.forEach(element => {
-    let lat = 0
-    let lng = 0
-    if (element.lng_lat_point !== '' && element.lng_lat_point) {
-      const latlng = splitLngLatPoint(element.lng_lat_point)
-      lat = latlng[0]
-      lng = latlng[1]
-    }
-    element.distance = getDistance(lat, latitude, lng, longitude)
-    shortestDistance = Math.min(element.distance, shortestDistance)
+    try {
+      let lat = 0
+      let lng = 0
+      if (element.lng_lat_point !== '' && element.lng_lat_point) {
+        const latlng = splitLngLatPoint(element.lng_lat_point)
+        lat = latlng[0]
+        lng = latlng[1]
+      }
+      element.distance = getDistance(lat, latitude, lng, longitude)
+      shortestDistance = Math.min(element.distance, shortestDistance)
+    } catch (e) {}
   })
   return datas.filter(function (val, index, array) {
     return val.distance === shortestDistance
