@@ -7,7 +7,7 @@ vendor:	db.csv
 	npm install
 
 style-check:	vendor
-	./node_modules/.bin/eslint *.js
+	./node_modules/.bin/eslint .
 
 test:	style-check
 	./node_modules/.bin/nyc ./node_modules/.bin/mocha
