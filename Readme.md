@@ -12,7 +12,7 @@ To implement the update location feature it's kind of cost time, so I just left 
 ## Features
 - [x] Retrieve a list of locations by country
 - [x] Retrieve a list of locations by the shortest distance given longitude and latitude
-- [x] Retrieve a list of locations by the shortest distance given longitude and latitude
+- [x] Retrieve a single location by id
 - [x] Retrieve a CSV file by the above list
 - [ ] Endpoints to create and update venue
 
