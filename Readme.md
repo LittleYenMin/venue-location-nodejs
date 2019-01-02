@@ -7,15 +7,14 @@ I'm using the CSV file as the local database.
 
 I want to make this project easy to deploy and test, so I choose CSV as my local database and not using SQLite or the other RDBMS.
 
-I focus on integrate the something fun and make code simple and easy to understand.
-
-To implement the update location feature it's kind of cost my time, so I just left it.
+To implement the update location feature it's kind of cost time, so I just left it, to focus on integrate the something fun and make code simple and easy to understand.
 
 ## What Can this do?
-- Retrieve a list of locations by country
-- Retrieve a list of locations by the shortest distance given longitude and latitude
-- Retrieve a list of locations by the shortest distance given longitude and latitude
-- Retrieve a CSV file by the above list
+- [x] Retrieve a list of locations by country
+- [x] Retrieve a list of locations by the shortest distance given longitude and latitude
+- [x] Retrieve a list of locations by the shortest distance given longitude and latitude
+- [x] Retrieve a CSV file by the above list
+- [ ] Endpoints to create and update venue
 
 ## How to run
 simple use `make run`
