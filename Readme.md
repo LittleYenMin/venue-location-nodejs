@@ -9,7 +9,7 @@ I want to make this project easy to deploy and test, so I choose CSV as my local
 
 To implement the update location feature it's kind of cost time, so I just left it, to focus on integrate the something fun and make code simple and easy to understand.
 
-## What Can this do?
+## Features
 - [x] Retrieve a list of locations by country
 - [x] Retrieve a list of locations by the shortest distance given longitude and latitude
 - [x] Retrieve a list of locations by the shortest distance given longitude and latitude
