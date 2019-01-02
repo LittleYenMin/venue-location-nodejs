@@ -5,12 +5,11 @@
 ## Description
 I'm using the CSV file as the local database. 
 
+I want to make this project easy to deploy and test, so I choose CSV as my local database and not using SQLite or the other RDBMS.
+
+I focus on integrate the something fun and make code simple and easy to understand.
+
 To implement the update location feature it's kind of cost my time, so I just left it.
-
-Let's talking about using CSV file as Database,
-because I want to make this project it's easy to deploy and test.
-
-So, I focus on integrate the something fun and make code simple to understand.
 
 ## What Can this do?
 - Retrieve a list of locations by country
@@ -33,6 +32,7 @@ venue-location-nodejs
   - controller
   - model
  - config
+  - route.js #the api route file
  - test
  index.js #the entry point
 ```
@@ -40,7 +40,7 @@ venue-location-nodejs
 ## Build to Heroku
 Unfortunately, you can't build this project to heroku or the other PaaS platform.
 
-Most of the time, You are not allowed to touch the PaaS platform file system, And this project database depends on the local CSV file, that's why you can't build on Heroku.
+Most of the time, You are not allowed to touch the file system of PaaS platform, And this project database depends on the local CSV file, that's why you can't build on Heroku.
 
 ## Used frameworks
 - Express
