@@ -3,7 +3,4 @@ node_js:
     - "10"
     - "9"
     - "8"
-before_install:
-    - npm install coveralls -g
-    - npm install mocha-lcov-reporter -g
-script: npm run-script coveralls
+after_success: npm run coverage
