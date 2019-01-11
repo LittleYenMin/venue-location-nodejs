@@ -2,7 +2,6 @@ const should = require('should')
 const venue = require('../app/models/venue.js')
 
 describe('#Venue', () => {
-
   it('Calculat the distance from (0,0) to (0, 5)', (done) => {
     const distance = venue.getDistance(0, 0, 0, 5)
     distance.should.equal(5)
