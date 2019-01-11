@@ -20,7 +20,7 @@ describe('#Venue', () => {
 
   it('Get all locations from DB file', (done) => {
     venue.getCsvDatas()
-      .then( (locations) => {
+      .then((locations) => {
         try {
           locations.length.should.equal(391)
           done()
@@ -30,7 +30,7 @@ describe('#Venue', () => {
 
   it('Get locations by country `VN`', (done) => {
     venue.getLocationByCountry('VN')
-      .then( (locations) => {
+      .then((locations) => {
         try {
           locations.length.should.equal(241)
           done()
@@ -40,7 +40,7 @@ describe('#Venue', () => {
 
   it('Get shortest locations by 致理科技大學 (121.4629392, 25.0211034)', (done) => {
     venue.getShortestDistanceByLatAndLong(121.4629392, 25.0211034)
-      .then( (locations) => {
+      .then((locations) => {
         try {
           locations.length.should.equal(1)
           locations[0].name.should.equal('新板分行')
@@ -51,22 +51,12 @@ describe('#Venue', () => {
 
   it('Get location by id 0', (done) => {
     venue.getById(0)
-      .then( (location) => {
+      .then((location) => {
         try {
           should.exist(location)
           location.name.should.equal('Chi nhanh NGUYEN VAN TROI')
           done()
         } catch (e) { done(e) }
-      })
-  })
-
-  it('Get location by id null expected throw error', (done) => {
-    venue.getById(null)
-      .then((location) => {
-        done(new Error('Should not exist'))
-      })
-      .catch((e) => {
-        done() // expected throw error here
       })
   })
 })

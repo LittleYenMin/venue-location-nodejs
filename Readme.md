@@ -1,6 +1,7 @@
 # Venue Location nodejs
 
 [![Build Status](https://travis-ci.org/LittleYenMin/venue-location-nodejs.svg?branch=master)](https://travis-ci.org/LittleYenMin/venue-location-nodejs)
+[![Coverage Status](https://coveralls.io/repos/github/LittleYenMin/venue-location-nodejs/badge.svg?branch=master)](https://coveralls.io/github/LittleYenMin/venue-location-nodejs?branch=master)
 
 ## Description
 I'm using the CSV file as the local database. 
