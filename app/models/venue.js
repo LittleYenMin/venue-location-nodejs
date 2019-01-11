@@ -19,8 +19,8 @@ function getCsvDatas () {
   })
 }
 
-function splitLngLatPoint (str) {
-  return str.split('POINT(')[1].split(')')[0].split(' ')
+function getLatLongPoint (str) {
+  return str.match(/[+-]?([0-9]*[.])?[0-9]+/g)
 }
 
 function getDistance (x1, x2, y1, y2) {
@@ -44,9 +44,9 @@ exports.getShortestDistanceByLatAndLong = async function (latitude, longitude) {
       let lat = 0
       let lng = 0
       if (element.lng_lat_point !== '' && element.lng_lat_point) {
-        const latlng = splitLngLatPoint(element.lng_lat_point)
-        lat = latlng[0]
-        lng = latlng[1]
+        const latlng = getLatLongPoint(element.lng_lat_point)
+        lat = latlng[1]
+        lng = latlng[2]
       }
       element.distance = getDistance(lat, latitude, lng, longitude)
       shortestDistance = Math.min(element.distance, shortestDistance)
@@ -65,4 +65,6 @@ exports.getById = async function (id) {
   throw new Error(`Can't find by id ${id}`)
 }
 
+exports.getDistance = getDistance
+exports.getLatLongPoint = getLatLongPoint
 exports.getCsvDatas = getCsvDatas
