@@ -4,7 +4,7 @@ const venue = require('../app/models/venue.js')
 describe('#Venue', () => {
   it('Get all locations from DB file', (done) => {
     venue.getCsvDatas()
-      .then( (locations) => {
+      .then((locations) => {
         try {
           locations.length.should.equal(391)
           done()
@@ -14,7 +14,7 @@ describe('#Venue', () => {
 
   it('Get locations by country `VN`', (done) => {
     venue.getLocationByCountry('VN')
-      .then( (locations) => {
+      .then((locations) => {
         try {
           locations.length.should.equal(241)
           done()
@@ -24,7 +24,7 @@ describe('#Venue', () => {
 
   it('Get shortest locations by 致理科技大學 (121.4629392, 25.0211034)', (done) => {
     venue.getShortestDistanceByLatAndLong(121.4629392, 25.0211034)
-      .then( (locations) => {
+      .then((locations) => {
         try {
           locations.length.should.equal(1)
           locations[0].name.should.equal('新板分行')
@@ -35,7 +35,7 @@ describe('#Venue', () => {
 
   it('Get location by id 0', (done) => {
     venue.getById(0)
-      .then( (location) => {
+      .then((location) => {
         try {
           should.exist(location)
           location.name.should.equal('Chi nhanh NGUYEN VAN TROI')
@@ -43,5 +43,4 @@ describe('#Venue', () => {
         } catch (e) { done(e) }
       })
   })
-
 })
